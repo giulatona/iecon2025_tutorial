@@ -205,3 +205,17 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Data files (automatically downloaded by notebooks)
+data/*.txt
+data/*.zip
+data/*.csv
+data/*.gz
+data/*.bz2
+data/*.xz
+
+# Model checkpoints and outputs
+models/
+checkpoints/
+outputs/
+logs/
