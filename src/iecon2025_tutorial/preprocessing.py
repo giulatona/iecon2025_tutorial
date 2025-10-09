@@ -585,8 +585,8 @@ def load_and_preprocess_data(
     batch_size: int = 32,
     shuffle_training: bool = True,
     target_columns: Optional[list[int]] = None,
-    add_time_features: bool = True,
-    add_holiday_features: bool = False,
+    use_time_features: bool = True,
+    use_holiday_features: bool = False,
     country: str = 'France',
     num_fourier_terms: int = 3,
     verbose: bool = True
@@ -628,9 +628,9 @@ def load_and_preprocess_data(
         Whether to shuffle training data
     target_columns : List[int], optional
         Column indices to predict (None for all columns)
-    add_time_features : bool, default True
+    use_time_features : bool, default True
         Whether to add cyclical time features
-    add_holiday_features : bool, default False
+    use_holiday_features : bool, default False
         Whether to add holiday indicators
     country : str, default 'France'
         Country for holiday calendar
@@ -674,14 +674,14 @@ def load_and_preprocess_data(
         print("✅ No missing values found")
 
     # Step 3: Add time-based features
-    if add_time_features:
+    if use_time_features:
         df_clean, fourier_columns = create_fourier_features(
             df_clean, num_fourier_terms)
         if verbose:
             print("✅ Time features added")
 
     # Step 4: Add holiday features (optional)
-    if add_holiday_features:
+    if use_holiday_features:
         try:
             df_clean = add_holiday_features(df_clean, country=country)
             if verbose:
@@ -754,8 +754,8 @@ def load_and_preprocess_data(
         'window_size': window_size,
         'forecast_horizon': forecast_horizon,
         'target_columns': target_columns,
-        'time_features_added': add_time_features,
-        'holiday_features_added': add_holiday_features,
+        'time_features_added': use_time_features,
+        'holiday_features_added': use_holiday_features,
         'feature_count': len(feature_names),
         'date_range': {
             'start': str(df_clean.index.min()),
