@@ -28,6 +28,7 @@ dependencies = [
     "plotly==5.24.1",
     "ipywidgets==7.7.1",
     "statsmodels==0.14.5",
+    "holidays (>=0.82,<0.83)",
 ]
 
 [project.optional-dependencies]
