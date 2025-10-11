@@ -26,7 +26,15 @@ This repository includes hands-on Jupyter notebooks that can be run in multiple 
 - **Local Development**: Using the provided DevContainer or local Poetry environment
 - **Google Colab**: All notebooks are fully compatible with Google Colab for easy access without local setup
 
-The notebooks demonstrate practical implementation of the concepts covered in the tutorial.
+### Tutorial Notebooks
+
+1. **[setup_check.ipynb](notebooks/setup_check.ipynb)** - Verify environment and dependencies
+2. **[01_data_exploration.ipynb](notebooks/01_data_exploration.ipynb)** - Exploratory data analysis of household power consumption
+3. **[02_preprocessing_windowing_features.ipynb](notebooks/02_preprocessing_windowing_features.ipynb)** - Data preprocessing, windowing, and feature engineering
+4. **[03_forecasting_models.ipynb](notebooks/03_forecasting_models.ipynb)** - Deep learning models for energy forecasting (baselines, feedforward, LSTM)
+5. **[figure_preparation.ipynb](notebooks/figure_preparation.ipynb)** - Generate presentation figures
+
+For detailed notebook documentation, see [notebooks/README.md](notebooks/README.md).
 
 ## Project Setup
 
